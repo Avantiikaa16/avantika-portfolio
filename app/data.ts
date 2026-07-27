@@ -6,9 +6,14 @@ export const stats: [string, string][] = [
 ];
 
 export const skills = [
-  "Python", "Java", "SQL", "JavaScript", "React", "FastAPI",
-  "Django", "Flask", "BigQuery", "Airflow", "AWS", "GCP",
-  "Azure", "Docker", "Kubernetes", "TensorFlow", "PyTorch", "MongoDB",
+  "Python", "Java", "Go", "JavaScript", "TypeScript", "SQL",
+  "React", "FastAPI", "Django", "Flask",
+  "BigQuery", "AWS", "GCP", "Azure",
+  "Docker", "Kubernetes", "Airflow", "Jenkins", "GitLab CI/CD", "Ansible",
+  "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "NLP", "LLMs",
+  "MySQL", "MongoDB",
+  "Git", "Postman", "Jupyter", "VS Code", "Linux",
+  "Data Structures & Algorithms", "OOP", "System Design", "Distributed Systems", "Multithreading",
 ];
 
 export const heroSkills = ["Python", "SQL", "GCP", "BigQuery", "Airflow", "Docker"];
@@ -42,9 +47,17 @@ export type Project = {
   desc: string;
   tech: string;
   link: string;
+  live?: string;
 };
 
 export const projects: Project[] = [
+  {
+    name: "TruthLens AI",
+    desc: "Full-stack fact investigation platform that verifies claims using live web research, official-source detection, explainable confidence scoring, and source-independence analysis — works across any domain, from health and finance to politics and sports. Built for the You.com Agentic AI Hackathon 2026, since extended into a persisted, authenticated, production app.",
+    tech: "React 19 • TypeScript • FastAPI • PostgreSQL (Neon) • You.com Research API • JWT Auth",
+    link: "https://github.com/Avantiikaa16/truthlens-ai",
+    live: "https://avantika-truthlens-ai.vercel.app",
+  },
   {
     name: "Patient Voice Bot",
     desc: "Automated voice QA bot that calls a medical office AI agent and simulates realistic patient conversations to surface bugs.",
@@ -53,8 +66,8 @@ export const projects: Project[] = [
   },
   {
     name: "Skill Bridge Career Navigator",
-    desc: "AI-powered career guidance platform that helps students explore career paths, identify skill gaps, and receive personalized recommendations.",
-    tech: "React • Python • AI • SQL",
+    desc: "AI-powered career guidance platform that analyzes user skills, identifies skill gaps, and recommends personalized learning paths.",
+    tech: "FastAPI • React • MySQL • Gemini API",
     link: "https://github.com/Avantiikaa16/skill-bridge-career-navigator",
   },
   {

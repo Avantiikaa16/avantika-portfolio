@@ -13,25 +13,34 @@ export default function Projects() {
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <FadeIn key={project.name} delay={(i % 3) * 0.1}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex h-full flex-col rounded-[2rem] border border-[#E8CDD4] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-              >
+              <div className="group flex h-full flex-col rounded-[2rem] border border-[#E8CDD4] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                 <h3 className="text-2xl font-bold">{project.name}</h3>
 
                 <p className="mt-4 leading-7 text-[#5B5560]">{project.desc}</p>
 
                 <p className="mt-6 text-sm font-semibold text-[#B85F7C]">{project.tech}</p>
 
-                <div className="mt-8 flex items-center justify-between">
-                  <span className="font-semibold text-[#B85F7C] group-hover:underline">
-                    View Repository →
-                  </span>
-                  <span className="text-xl">↗</span>
+                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[#B85F7C] hover:underline"
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-[#B85F7C] hover:underline"
+                  >
+                    View Repository ↗
+                  </a>
                 </div>
-              </a>
+              </div>
             </FadeIn>
           ))}
         </div>
