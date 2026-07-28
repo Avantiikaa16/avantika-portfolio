@@ -63,7 +63,7 @@ export const hackathons: Hackathon[] = [
   {
     name: "TruthLens AI",
     event: "You.com Agentic AI Hackathon 2026",
-    desc: "Full-stack fact investigation platform that verifies claims using live web research, official-source detection, explainable confidence scoring, and source-independence analysis — works across any domain, from health and finance to politics and sports. Originally built for the hackathon, since extended into a persisted, authenticated, production app.",
+    desc: "Full-stack fact investigation platform that verifies claims using live web research, official-source detection, explainable confidence scoring, and source-independence analysis — works across any domain, from health and finance to politics and sports.",
     tech: "React 19 • TypeScript • FastAPI • PostgreSQL (Neon) • You.com Research API • JWT Auth",
     link: "https://github.com/Avantiikaa16/truthlens-ai",
     live: "https://avantika-truthlens-ai.vercel.app",
