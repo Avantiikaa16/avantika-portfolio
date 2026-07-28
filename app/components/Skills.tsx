@@ -3,7 +3,7 @@ import FadeIn from "./FadeIn";
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-[#FFF3F6] px-8 py-24">
+    <section id="skills" className="px-8 py-24">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#B85F7C]">Skills</p>

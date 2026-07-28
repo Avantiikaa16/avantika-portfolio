@@ -18,7 +18,7 @@ export const skills = [
 
 export const heroSkills = ["Python", "SQL", "GCP", "BigQuery", "Airflow", "Docker"];
 
-export const navItems = ["About", "Experience", "Projects", "Skills", "Contact"];
+export const navItems = ["About", "Experience", "Projects", "Hackathons", "Skills", "Contact"];
 
 export type Experience = {
   role: string;
@@ -50,14 +50,27 @@ export type Project = {
   live?: string;
 };
 
-export const projects: Project[] = [
+export type Hackathon = {
+  name: string;
+  event: string;
+  desc: string;
+  tech: string;
+  link: string;
+  live?: string;
+};
+
+export const hackathons: Hackathon[] = [
   {
     name: "TruthLens AI",
-    desc: "Full-stack fact investigation platform that verifies claims using live web research, official-source detection, explainable confidence scoring, and source-independence analysis — works across any domain, from health and finance to politics and sports. Built for the You.com Agentic AI Hackathon 2026, since extended into a persisted, authenticated, production app.",
+    event: "You.com Agentic AI Hackathon 2026",
+    desc: "Full-stack fact investigation platform that verifies claims using live web research, official-source detection, explainable confidence scoring, and source-independence analysis — works across any domain, from health and finance to politics and sports. Originally built for the hackathon, since extended into a persisted, authenticated, production app.",
     tech: "React 19 • TypeScript • FastAPI • PostgreSQL (Neon) • You.com Research API • JWT Auth",
     link: "https://github.com/Avantiikaa16/truthlens-ai",
     live: "https://avantika-truthlens-ai.vercel.app",
   },
+];
+
+export const projects: Project[] = [
   {
     name: "Patient Voice Bot",
     desc: "Automated voice QA bot that calls a medical office AI agent and simulates realistic patient conversations to surface bugs.",
