@@ -28,7 +28,7 @@ export default function Nav() {
         </div>
 
         <a
-          href="https://drive.google.com/file/d/1qV0EekbkGTjr4c9qQUVAU8pCBbuckWOe/view?usp=sharing"
+          href="https://drive.google.com/file/d/1jJ20eKaz2W2QHLRxRbDI-KzZOddaHYcv/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-block rounded-2xl border border-[#E4B9C5] bg-[#FFF0F4] px-5 py-3 text-sm font-semibold text-[#B85F7C]"
@@ -61,7 +61,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="https://drive.google.com/file/d/1qV0EekbkGTjr4c9qQUVAU8pCBbuckWOe/view?usp=sharing"
+              href="https://drive.google.com/file/d/1jJ20eKaz2W2QHLRxRbDI-KzZOddaHYcv/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
