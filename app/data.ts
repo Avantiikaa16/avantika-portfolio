@@ -61,6 +61,14 @@ export type Hackathon = {
 
 export const hackathons: Hackathon[] = [
   {
+    name: "AgentCourt Precedent",
+    event: "Memory Meets Motion Hackathon 2026",
+    desc: "AI governance system where every risky agent action goes on trial before executing — a Prosecutor and Defense agent argue the case, a Judge weighs it against real precedent, but a deterministic policy engine (not the LLM) holds final execution authority. Approved outcomes compound into precedent, so future trials get judged against everything that came before.",
+    tech: "Next.js • TypeScript • Fastify • FalkorDB (Cypher) • Guild.ai • RocketRide • LaserData",
+    link: "https://github.com/Avantiikaa16/agentcourt-precedent",
+    live: "https://agentcourt-precedent.vercel.app",
+  },
+  {
     name: "TruthLens AI",
     event: "You.com Agentic AI Hackathon 2026",
     desc: "Full-stack fact investigation platform that verifies claims using live web research, official-source detection, explainable confidence scoring, and source-independence analysis — works across any domain, from health and finance to politics and sports.",
