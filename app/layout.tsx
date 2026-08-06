@@ -32,7 +32,6 @@ export const metadata: Metadata = {
       "Software Engineer specializing in backend systems, cloud data platforms, and AI-powered applications.",
     url: "https://avantika-chapegadikar-portfolio.vercel.app",
     siteName: "Avantika Chapegadikar",
-    images: [{ url: "/avantika.jpg" }],
     type: "website",
   },
   twitter: {
@@ -40,7 +39,6 @@ export const metadata: Metadata = {
     title: "Avantika Chapegadikar | Software Engineer",
     description:
       "Software Engineer specializing in backend systems, cloud data platforms, and AI-powered applications.",
-    images: ["/avantika.jpg"],
   },
 };
 

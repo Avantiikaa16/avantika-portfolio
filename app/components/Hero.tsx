@@ -3,65 +3,78 @@ import { heroSkills, stats } from "../data";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden px-8 pb-24 pt-36">
-      <div className="absolute left-[-120px] top-[-100px] h-80 w-80 rounded-full bg-[#F8D7DF]/70 blur-3xl" />
-      <div className="absolute right-[-120px] top-48 h-[420px] w-[420px] rounded-full bg-[#F6C9D6]/60 blur-3xl" />
-      <div className="absolute bottom-[-120px] left-[45%] h-96 w-96 rounded-full bg-[#E8DDFF]/70 blur-3xl" />
+      <div className="absolute left-[-120px] top-[-100px] h-80 w-80 rounded-full bg-[#1E3A8A]/25 blur-3xl" />
+      <div className="absolute right-[-120px] top-48 h-[420px] w-[420px] rounded-full bg-[#312E81]/25 blur-3xl" />
+      <div className="absolute bottom-[-120px] left-[45%] h-96 w-96 rounded-full bg-[#1D4ED8]/15 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-2">
         <div>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E4B9C5] bg-[#FFF3F7] px-5 py-2 shadow-sm">
-            <span className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="font-semibold text-[#B85F7C]">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-5 py-2 shadow-sm">
+            <span className="h-3 w-3 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="font-semibold text-[#8FA8FF]">
               Open to Full-time Opportunities
             </span>
           </div>
 
-          <p className="mb-2 text-xl text-[#5B5560]">Hello, I&apos;m</p>
+          <p className="mb-2 text-xl text-[#8B95AB]">Hello, I&apos;m</p>
 
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[0.95]">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.95] bg-gradient-to-b from-[#DCE6FF] to-[#8FA8FF] bg-clip-text text-transparent">
             Avantika
             <br />
-            <span className="italic text-[#B85F7C]">Chapegadikar</span>
+            Chapegadikar
           </h1>
 
-          <p className="mt-7 text-sm font-bold uppercase tracking-[0.25em] text-[#B85F7C]">
-            Software Engineer <span className="text-[#9B8EA0]">| Backend • Cloud • Data • AI</span>
+          <p className="mt-7 text-sm font-bold uppercase tracking-[0.25em] text-[#8FA8FF]">
+            Software Engineer <span className="text-[#5B6478]">| Backend • Cloud • Data • AI</span>
           </p>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-[#5B5560]">
+          <p className="mt-6 max-w-xl text-lg leading-8 text-[#8B95AB]">
             I build scalable backend systems, cloud data platforms, and AI-powered applications that solve real-world problems.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#projects" className="rounded-2xl bg-[#B85F7C] px-7 py-4 font-semibold text-white shadow-lg">
+            <a href="#projects" className="rounded-2xl bg-[#5B7FFF] px-7 py-4 font-semibold text-white shadow-lg shadow-[#5B7FFF]/20">
               View Projects →
             </a>
-            <a href="#contact" className="rounded-2xl border border-[#E4B9C5] bg-white px-7 py-4 font-semibold text-[#B85F7C]">
+            <a href="#contact" className="rounded-2xl border border-white/15 bg-white/[0.03] px-7 py-4 font-semibold text-[#8FA8FF]">
               Contact Me ✉
             </a>
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-[#EAD2D8] bg-white/75 p-8 shadow-[0_30px_100px_rgba(184,95,124,0.16)] backdrop-blur-xl">
-          <div className="grid grid-cols-2 gap-6 border-b border-[#EAD2D8] pb-8">
-            {stats.map(([num, label]) => (
-              <div key={label} className="rounded-3xl bg-[#FFF3F6] p-6">
-                <p className="font-serif text-4xl font-bold text-[#2F2D36]">{num}</p>
-                <p className="mt-2 text-sm text-[#6C616B]">{label}</p>
-              </div>
-            ))}
+        <div className="rounded-[1.5rem] border border-white/10 bg-[#0F1524]/90 shadow-[0_30px_100px_rgba(0,0,0,0.5)] backdrop-blur-xl overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.02] px-5 py-3">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#FF6159]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
+            <span className="ml-3 text-xs text-[#5B6478]">~/avantika</span>
           </div>
 
-          <p className="mt-8 text-center text-xs font-bold uppercase tracking-[0.3em] text-[#B85F7C]">
-            Technologies I work with
-          </p>
+          <div className="p-8">
+            <p className="text-[#8FA8FF]">
+              <span className="text-[#5B6478]">$</span> ./whoami.sh
+            </p>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            {heroSkills.map((skill) => (
-              <span key={skill} className="rounded-full border border-[#E8CDD4] bg-white px-4 py-2 text-sm">
-                {skill}
-              </span>
-            ))}
+            <div className="mt-6 grid grid-cols-2 gap-4 border-b border-white/10 pb-8">
+              {stats.map(([num, label]) => (
+                <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+                  <p className="text-4xl font-bold text-[#E7ECFB]">{num}</p>
+                  <p className="mt-2 text-sm text-[#8B95AB]">{label}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-8 text-center text-xs font-bold uppercase tracking-[0.3em] text-[#8FA8FF]">
+              Technologies I work with
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              {heroSkills.map((skill) => (
+                <span key={skill} className="rounded-full border border-white/10 bg-white/[0.02] px-4 py-2 text-sm text-[#E7ECFB]">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

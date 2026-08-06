@@ -6,20 +6,20 @@ export default function Contact() {
   return (
     <section id="contact" className="px-8 py-24 text-center">
       <FadeIn>
-        <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#B85F7C]">Contact</p>
-        <h2 className="mt-4 font-serif text-5xl">Let&apos;s build something meaningful.</h2>
-        <p className="mx-auto mt-6 max-w-xl text-[#5B5560]">
+        <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#8FA8FF]">Contact</p>
+        <h2 className="mt-4 text-5xl font-bold text-[#E7ECFB]">Let&apos;s build something meaningful.</h2>
+        <p className="mx-auto mt-6 max-w-xl text-[#8B95AB]">
           Open to Software Engineer, Backend Engineer, Data Engineer, Platform Engineer, and AI/ML Engineer roles.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <span className="rounded-full border border-[#E8CDD4] bg-white px-4 py-2 text-sm">
+          <span className="rounded-full border border-white/10 bg-[#0F1524] px-4 py-2 text-sm text-[#E7ECFB]">
             📍 San Francisco, California
           </span>
-          <span className="rounded-full border border-[#E8CDD4] bg-white px-4 py-2 text-sm">
+          <span className="rounded-full border border-white/10 bg-[#0F1524] px-4 py-2 text-sm text-[#E7ECFB]">
             Open to Relocation
           </span>
-          <span className="rounded-full border border-[#E8CDD4] bg-white px-4 py-2 text-sm">
+          <span className="rounded-full border border-white/10 bg-[#0F1524] px-4 py-2 text-sm text-[#E7ECFB]">
             Available for Full-Time
           </span>
         </div>
@@ -27,7 +27,7 @@ export default function Contact() {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
             href="mailto:achapegadikar@gmail.com"
-            className="flex items-center gap-3 rounded-2xl border border-[#E4B9C5] bg-white px-7 py-4 font-semibold text-[#B85F7C] transition-all duration-300 hover:-translate-y-1 hover:bg-[#B85F7C] hover:text-white hover:shadow-lg"
+            className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.03] px-7 py-4 font-semibold text-[#8FA8FF] transition-all duration-300 hover:-translate-y-1 hover:bg-[#5B7FFF] hover:text-white hover:border-[#5B7FFF]"
           >
             <FaEnvelope size={18} />
             <span>Email Me</span>
@@ -37,7 +37,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/avantikachapegadikar/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-2xl border border-[#E4B9C5] bg-white px-7 py-4 font-semibold text-[#B85F7C] transition-all duration-300 hover:-translate-y-1 hover:bg-[#B85F7C] hover:text-white hover:shadow-lg"
+            className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.03] px-7 py-4 font-semibold text-[#8FA8FF] transition-all duration-300 hover:-translate-y-1 hover:bg-[#5B7FFF] hover:text-white hover:border-[#5B7FFF]"
           >
             <FaLinkedin size={18} />
             <span>LinkedIn</span>
@@ -47,7 +47,7 @@ export default function Contact() {
             href="https://github.com/Avantiikaa16"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-2xl border border-[#E4B9C5] bg-white px-7 py-4 font-semibold text-[#B85F7C] transition-all duration-300 hover:-translate-y-1 hover:bg-[#B85F7C] hover:text-white hover:shadow-lg"
+            className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.03] px-7 py-4 font-semibold text-[#8FA8FF] transition-all duration-300 hover:-translate-y-1 hover:bg-[#5B7FFF] hover:text-white hover:border-[#5B7FFF]"
           >
             <FaGithub size={18} />
             <span>GitHub</span>
@@ -57,7 +57,7 @@ export default function Contact() {
             href="https://leetcode.com/u/avantika16/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 rounded-2xl border border-[#E4B9C5] bg-white px-7 py-4 font-semibold text-[#B85F7C] transition-all duration-300 hover:-translate-y-1 hover:bg-[#B85F7C] hover:text-white hover:shadow-lg"
+            className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.03] px-7 py-4 font-semibold text-[#8FA8FF] transition-all duration-300 hover:-translate-y-1 hover:bg-[#5B7FFF] hover:text-white hover:border-[#5B7FFF]"
           >
             <SiLeetcode size={18} />
             <span>LeetCode</span>
