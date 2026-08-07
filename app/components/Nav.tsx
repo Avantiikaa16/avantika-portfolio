@@ -1,11 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navItems } from "../data";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.toLowerCase()))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#0A0E17]/80 backdrop-blur-xl">
@@ -18,15 +37,22 @@ export default function Nav() {
         </div>
 
         <div className="hidden md:flex items-center gap-10">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="relative text-[#8B95AB] transition-colors duration-300 hover:text-[#8FA8FF] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#8FA8FF] after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {item}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive = activeSection === item.toLowerCase();
+            return (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className={`relative transition-colors duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-[#8FA8FF] after:transition-all after:duration-300 ${
+                  isActive
+                    ? "text-[#8FA8FF] after:w-full"
+                    : "text-[#8B95AB] after:w-0 hover:text-[#8FA8FF] hover:after:w-full"
+                }`}
+              >
+                {item}
+              </a>
+            );
+          })}
         </div>
 
         <a

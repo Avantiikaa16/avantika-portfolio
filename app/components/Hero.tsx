@@ -1,4 +1,5 @@
-import { heroSkills, stats } from "../data";
+import TypewriterRole from "./TypewriterRole";
+import TerminalSession from "./TerminalSession";
 
 export default function Hero() {
   return (
@@ -25,7 +26,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 text-sm font-bold uppercase tracking-[0.25em] text-[#8FA8FF]">
-            Software Engineer <span className="text-[#5B6478]">| Backend • Cloud • Data • AI</span>
+            <TypewriterRole />
           </p>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-[#8B95AB]">
@@ -51,29 +52,8 @@ export default function Hero() {
           </div>
 
           <div className="p-8">
-            <p className="text-[#8FA8FF]">
-              <span className="text-[#5B6478]">$</span> ./whoami.sh
-            </p>
-
-            <div className="mt-6 grid grid-cols-2 gap-4 border-b border-white/10 pb-8">
-              {stats.map(([num, label]) => (
-                <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.02] p-6">
-                  <p className="text-4xl font-bold text-[#E7ECFB]">{num}</p>
-                  <p className="mt-2 text-sm text-[#8B95AB]">{label}</p>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-8 text-center text-xs font-bold uppercase tracking-[0.3em] text-[#8FA8FF]">
-              Technologies I work with
-            </p>
-
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {heroSkills.map((skill) => (
-                <span key={skill} className="rounded-full border border-white/10 bg-white/[0.02] px-4 py-2 text-sm text-[#E7ECFB]">
-                  {skill}
-                </span>
-              ))}
+            <div className="min-h-[260px]">
+              <TerminalSession />
             </div>
           </div>
         </div>

@@ -5,18 +5,24 @@ export const stats: [string, string][] = [
   ["500K+", "Products Automated"],
 ];
 
-export const skills = [
-  "Python", "Java", "Go", "JavaScript", "TypeScript", "SQL",
-  "React", "FastAPI", "Django", "Flask",
-  "BigQuery", "AWS", "GCP", "Azure",
-  "Docker", "Kubernetes", "Airflow", "Jenkins", "GitLab CI/CD", "Ansible",
-  "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "NLP", "LLMs",
-  "MySQL", "MongoDB",
-  "Git", "Postman", "Jupyter", "VS Code", "Linux",
-  "Data Structures & Algorithms", "OOP", "System Design", "Distributed Systems", "Multithreading",
-];
+export type SkillGroup = { category: string; items: string[] };
 
-export const heroSkills = ["Python", "SQL", "GCP", "BigQuery", "Airflow", "Docker"];
+export const skillGroups: SkillGroup[] = [
+  { category: "Languages", items: ["Python", "Java", "Go", "JavaScript", "TypeScript", "SQL"] },
+  { category: "Frameworks & Databases", items: ["React", "FastAPI", "Django", "Flask", "MySQL", "MongoDB"] },
+  {
+    category: "Cloud & Infrastructure",
+    items: ["AWS", "GCP", "Azure", "BigQuery", "Docker", "Kubernetes", "Airflow", "Jenkins", "GitLab CI/CD", "Ansible"],
+  },
+  { category: "AI & Data", items: ["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "NLP", "LLMs"] },
+  {
+    category: "Tools & Foundations",
+    items: [
+      "Git", "Postman", "Jupyter", "VS Code", "Linux",
+      "Data Structures & Algorithms", "OOP", "System Design", "Distributed Systems", "Multithreading",
+    ],
+  },
+];
 
 export const navItems = ["About", "Experience", "Projects", "Hackathons", "Skills", "Contact"];
 
@@ -63,7 +69,7 @@ export const hackathons: Hackathon[] = [
   {
     name: "AgentCourt Precedent",
     event: "Memory Meets Motion Hackathon 2026",
-    desc: "AI governance system where every risky agent action goes on trial before executing — a Prosecutor and Defense agent argue the case, a Judge weighs it against real precedent, but a deterministic policy engine (not the LLM) holds final execution authority. Approved outcomes compound into precedent, so future trials get judged against everything that came before.",
+    desc: "AI governance system where every risky agent action goes on trial — a courtroom of AI agents argues the case, but a deterministic policy engine, not the LLM, holds final execution authority. Approved outcomes compound into precedent for future trials.",
     tech: "Next.js • TypeScript • Fastify • FalkorDB (Cypher) • Guild.ai • RocketRide • LaserData",
     link: "https://github.com/Avantiikaa16/agentcourt-precedent",
     live: "https://agentcourt-precedent.vercel.app",

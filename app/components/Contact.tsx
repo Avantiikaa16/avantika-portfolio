@@ -1,6 +1,9 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { CalendarDays } from "lucide-react";
 import FadeIn from "./FadeIn";
+
+const SCHEDULE_LINK = "https://calendly.com/achapegadikar-smu/30min";
 
 export default function Contact() {
   return (
@@ -24,7 +27,19 @@ export default function Contact() {
           </span>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <div className="mt-8 flex justify-center">
+          <a
+            href={SCHEDULE_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 rounded-2xl bg-[#5B7FFF] px-8 py-4 font-semibold text-white shadow-lg shadow-[#5B7FFF]/20 transition-all duration-300 hover:-translate-y-1"
+          >
+            <CalendarDays size={18} />
+            <span>Schedule a Call</span>
+          </a>
+        </div>
+
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
           <a
             href="mailto:achapegadikar@gmail.com"
             className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.03] px-7 py-4 font-semibold text-[#8FA8FF] transition-all duration-300 hover:-translate-y-1 hover:bg-[#5B7FFF] hover:text-white hover:border-[#5B7FFF]"

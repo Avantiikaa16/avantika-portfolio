@@ -1,4 +1,4 @@
-import { skills } from "../data";
+import { skillGroups } from "../data";
 import FadeIn from "./FadeIn";
 
 export default function Skills() {
@@ -10,13 +10,25 @@ export default function Skills() {
           <h2 className="mt-4 text-5xl font-bold text-[#E7ECFB]">Tech Stack</h2>
         </FadeIn>
 
-        <FadeIn delay={0.1} className="mt-10 flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <span key={skill} className="rounded-full border border-white/10 bg-[#0F1524] px-5 py-3 text-sm font-medium text-[#E7ECFB]">
-              {skill}
-            </span>
+        <div className="mt-10 space-y-8">
+          {skillGroups.map((group, i) => (
+            <FadeIn key={group.category} delay={i * 0.08}>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#5B6478]">
+                {group.category}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {group.items.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full border border-white/10 bg-[#0F1524] px-5 py-3 text-sm font-medium text-[#E7ECFB] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5B7FFF]/50 hover:text-[#8FA8FF]"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </FadeIn>
           ))}
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

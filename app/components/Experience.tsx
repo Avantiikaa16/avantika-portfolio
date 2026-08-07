@@ -10,9 +10,11 @@ export default function Experience() {
           <h2 className="mt-4 text-5xl font-bold text-[#E7ECFB]">Career Journey</h2>
         </FadeIn>
 
-        <div className="mt-12 grid gap-6">
+        <div className="relative mt-12 space-y-8 border-l-2 border-white/10 pl-10">
           {experiences.map((exp, i) => (
-            <FadeIn key={exp.company} delay={i * 0.1}>
+            <FadeIn key={exp.company} delay={i * 0.1} className="relative">
+              <span className="absolute -left-[3.05rem] top-2 h-3.5 w-3.5 rounded-full border-2 border-[#5B7FFF] bg-[#0A0E17]" />
+
               <div className="rounded-[1.5rem] border border-white/10 bg-[#0F1524] p-8 shadow-sm hover:border-white/20 transition">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8FA8FF]">
                   {exp.company}
