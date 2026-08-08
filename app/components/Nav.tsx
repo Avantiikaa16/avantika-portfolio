@@ -4,9 +4,23 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navItems } from "../data";
 
+const LOGO_TEXT = "AC";
+const LOGO_TYPE_SPEED = 180;
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [logoChars, setLogoChars] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setLogoChars(LOGO_TEXT.length);
+      return;
+    }
+    if (logoChars >= LOGO_TEXT.length) return;
+    const t = setTimeout(() => setLogoChars((c) => c + 1), LOGO_TYPE_SPEED);
+    return () => clearTimeout(t);
+  }, [logoChars]);
 
   useEffect(() => {
     const sections = navItems
@@ -31,7 +45,9 @@ export default function Nav() {
       <div className="flex items-center justify-between px-8 py-5">
         <div>
           <div className="text-3xl font-bold text-[#8FA8FF]">
-            <span className="text-[#5B6478]">&gt;</span>AC
+            <span className="text-[#5B6478]">&gt;</span>
+            {LOGO_TEXT.slice(0, logoChars)}
+            <span className="ml-0.5 inline-block h-[0.8em] w-[3px] animate-pulse bg-current align-middle" />
           </div>
           <p className="text-xs text-[#8B95AB]">Software Engineer</p>
         </div>
