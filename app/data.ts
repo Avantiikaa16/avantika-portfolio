@@ -67,6 +67,14 @@ export type Hackathon = {
 
 export const hackathons: Hackathon[] = [
   {
+    name: "ReproZero",
+    event: "Greptile Fast Hackathon 2026",
+    desc: "Turns incomplete production-incident evidence into a deterministic, executable reproduction — builds a structured ReproSpec, connects the failure to the exact code path via Greptile, proposes a Codex-generated candidate patch, and verifies it by rerunning the same simulated environment.",
+    tech: "Next.js • TypeScript • OpenAI Codex • Greptile • Claude-Mem • AWS • Stripe",
+    link: "https://github.com/Avantiikaa16/ReproZero",
+    live: "https://reprozero.vercel.app",
+  },
+  {
     name: "AgentCourt Precedent",
     event: "Memory Meets Motion Hackathon 2026",
     desc: "AI governance system where every risky agent action goes on trial — a courtroom of AI agents argues the case, but a deterministic policy engine, not the LLM, holds final execution authority. Approved outcomes compound into precedent for future trials.",
