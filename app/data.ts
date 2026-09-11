@@ -69,8 +69,8 @@ export const hackathons: Hackathon[] = [
   {
     name: "ReproZero",
     event: "Greptile Fast Hackathon 2026",
-    desc: "Turns incomplete production-incident evidence into a deterministic, executable reproduction — builds a structured ReproSpec, connects the failure to the exact code path via Greptile, proposes a Codex-generated candidate patch, and verifies it by rerunning the same simulated environment.",
-    tech: "Next.js • TypeScript • OpenAI Codex • Greptile • Claude-Mem • AWS • Stripe",
+    desc: "Multi-tenant incident-reproduction platform that turns ticket evidence into an executable repro — imports directly from Jira, runs candidate fixes in an isolated Vercel Sandbox microVM, and verifies them with real before/after test results instead of a plausible-sounding explanation. Includes GitHub branch/PR creation, hosted incident memory, and a full audit log.",
+    tech: "Next.js 16 • Clerk • Neon Postgres • Drizzle ORM • Vercel Sandbox • Zod • Vitest",
     link: "https://github.com/Avantiikaa16/ReproZero",
     live: "https://reprozero.vercel.app",
   },
