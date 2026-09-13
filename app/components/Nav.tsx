@@ -43,14 +43,14 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#0A0E17]/80 backdrop-blur-xl">
       <div className="flex items-center justify-between px-8 py-5">
-        <div>
+        <a href="#" className="block">
           <div className="text-3xl font-bold text-[#8FA8FF]">
             <span className="text-[#5B6478]">&gt;</span>
             {LOGO_TEXT.slice(0, logoChars)}
             <span className="ml-0.5 inline-block h-[0.8em] w-[3px] animate-pulse bg-current align-middle" />
           </div>
           <p className="text-xs text-[#8B95AB]">Software Engineer</p>
-        </div>
+        </a>
 
         <div className="hidden md:flex items-center gap-10">
           {navItems.map((item) => {
