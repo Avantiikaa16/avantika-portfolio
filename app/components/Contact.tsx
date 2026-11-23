@@ -1,7 +1,8 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, FileDown } from "lucide-react";
 import FadeIn from "./FadeIn";
+import { RESUME_URL } from "../data";
 
 const SCHEDULE_LINK = "https://calendly.com/achapegadikar-smu/30min";
 
@@ -12,12 +13,12 @@ export default function Contact() {
         <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#8FA8FF]">Contact</p>
         <h2 className="mt-4 text-5xl font-bold text-[#E7ECFB]">Let&apos;s build something meaningful.</h2>
         <p className="mx-auto mt-6 max-w-xl text-[#8B95AB]">
-          Open to Software Engineer, Backend Engineer, Data Engineer, Platform Engineer, and AI/ML Engineer roles.
+          Open to Software Engineer, Backend Engineer, Full-Stack Engineer, Data Engineer, Platform Engineer, and AI/ML Engineer roles.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <span className="rounded-full border border-white/10 bg-[#0F1524] px-4 py-2 text-sm text-[#E7ECFB]">
-            📍 San Francisco, California
+            📍 Santa Clara, California
           </span>
           <span className="rounded-full border border-white/10 bg-[#0F1524] px-4 py-2 text-sm text-[#E7ECFB]">
             Open to Relocation
@@ -27,7 +28,7 @@ export default function Contact() {
           </span>
         </div>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
             href={SCHEDULE_LINK}
             target="_blank"
@@ -36,6 +37,15 @@ export default function Contact() {
           >
             <CalendarDays size={18} />
             <span>Schedule a Call</span>
+          </a>
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.03] px-8 py-4 font-semibold text-[#8FA8FF] transition-all duration-300 hover:-translate-y-1 hover:bg-[#5B7FFF] hover:text-white hover:border-[#5B7FFF]"
+          >
+            <FileDown size={18} />
+            <span>Download Resume</span>
           </a>
         </div>
 

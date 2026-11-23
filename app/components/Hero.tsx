@@ -1,5 +1,6 @@
 import TypewriterRole from "./TypewriterRole";
 import TerminalSession from "./TerminalSession";
+import { RESUME_URL } from "../data";
 
 export default function Hero() {
   return (
@@ -39,6 +40,9 @@ export default function Hero() {
             </a>
             <a href="#contact" className="rounded-2xl border border-white/15 bg-white/[0.03] px-7 py-4 font-semibold text-[#8FA8FF]">
               Contact Me ✉
+            </a>
+            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="rounded-2xl border border-white/15 bg-white/[0.03] px-7 py-4 font-semibold text-[#8FA8FF]">
+              Resume ↓
             </a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { hackathons } from "../data";
 import FadeIn from "./FadeIn";
+import NoBreakHyphens from "./NoBreakHyphens";
 
 export default function Hackathons() {
   return (
@@ -20,9 +21,9 @@ export default function Hackathons() {
 
                 <h3 className="mt-4 text-2xl font-bold text-[#E7ECFB]">{hackathon.name}</h3>
 
-                <p className="mt-4 leading-7 text-[#8B95AB]">{hackathon.desc}</p>
+                <p className="mt-4 leading-7 text-[#8B95AB]"><NoBreakHyphens text={hackathon.desc} /></p>
 
-                <p className="mt-6 text-sm font-semibold text-[#8FA8FF]">{hackathon.tech}</p>
+                <p className="mt-auto pt-6 text-sm font-semibold text-[#8FA8FF]">{hackathon.tech}</p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
                   {hackathon.live && (

@@ -25,12 +25,12 @@ export default function About() {
             <span className="text-[#8FA8FF]"> with purpose.</span>
           </h2>
 
-          <div className="mt-8 space-y-6 text-lg leading-8 text-[#8B95AB]">
+          <div className="mt-8 space-y-6 text-justify text-lg leading-8 text-[#8B95AB]">
             <p>
-              I&apos;m a Software Engineer with 3 years of experience building scalable backend systems, cloud platforms, and data pipelines.
+              I&apos;m a Software Engineer with 2 years of <span className="whitespace-nowrap">full-stack</span> software development and 1 year of data engineering experience, building backend systems, REST APIs, cloud infrastructure, and data pipelines with Python, Java, TypeScript, and React.
             </p>
             <p>
-              I recently completed my Master&apos;s in Computer Science from Southern Methodist University with a specialization in Artificial Intelligence and Machine Learning.
+              I recently completed my Master&apos;s in Computer Science at Southern Methodist University (GPA 3.75), specializing in Artificial Intelligence and Machine Learning, after a B.Sc. in Information Technology from the University of Mumbai.
             </p>
             <p>
               I&apos;m passionate about backend engineering, distributed systems, cloud infrastructure, AI, and solving complex engineering problems.

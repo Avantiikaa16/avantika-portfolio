@@ -16,7 +16,7 @@ export default function Recognition() {
             <div className="text-4xl">🏆</div>
             <h3 className="mt-5 text-2xl font-bold text-[#E7ECFB]">Technologist of the Month</h3>
             <p className="mt-4 text-[#8B95AB]">
-              Awarded at Ergode IT Services for delivering the Keyword Violation Automation Platform and driving engineering excellence.
+              Awarded at Ergode IT Services for building a <span className="whitespace-nowrap">rule-based</span> <span className="whitespace-nowrap">auto-delisting</span> service that eliminated 90% of manual compliance work across 500K+ products.
             </p>
           </FadeIn>
 
@@ -24,8 +24,18 @@ export default function Recognition() {
             <div className="text-4xl">🤖</div>
             <h3 className="mt-5 text-2xl font-bold text-[#E7ECFB]">Connect4 AI Competition</h3>
             <p className="mt-4 text-[#8B95AB]">
-              Secured 2nd Place by building an AI agent using Minimax and Alpha-Beta pruning.
+              Secured 2nd Place by building an AI agent using Minimax and <span className="whitespace-nowrap">Alpha-Beta</span> pruning.
             </p>
+          </FadeIn>
+
+          <FadeIn delay={0.2} className="rounded-[1.25rem] border border-white/10 bg-[#0F1524] p-8 shadow-sm transition hover:-translate-y-1 hover:border-white/20">
+            <div className="text-4xl">☁️</div>
+            <h3 className="mt-5 text-2xl font-bold text-[#E7ECFB]">Certifications</h3>
+            <ul className="mt-4 space-y-2 text-[#8B95AB]">
+              <li>GCP Associate Cloud Engineer</li>
+              <li>Google Cloud: Introduction to Cloud Identity</li>
+              <li>IBM Cybersecurity Fundamentals</li>
+            </ul>
           </FadeIn>
         </div>
       </div>

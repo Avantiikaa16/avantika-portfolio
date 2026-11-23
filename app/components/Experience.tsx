@@ -1,5 +1,6 @@
 import { experiences } from "../data";
 import FadeIn from "./FadeIn";
+import NoBreakHyphens from "./NoBreakHyphens";
 
 export default function Experience() {
   return (
@@ -18,6 +19,7 @@ export default function Experience() {
               <div className="rounded-[1.5rem] border border-white/10 bg-[#0F1524] p-8 shadow-sm hover:border-white/20 transition">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8FA8FF]">
                   {exp.company}
+                  <span className="ml-3 font-medium normal-case tracking-normal text-[#5B6478]">{exp.location}</span>
                 </p>
 
                 <div className="mt-2 flex flex-col md:flex-row md:items-center md:justify-between">
@@ -27,7 +29,14 @@ export default function Experience() {
                   </span>
                 </div>
 
-                <p className="mt-5 leading-8 text-[#8B95AB]">{exp.text}</p>
+                <ul className="mt-5 space-y-3 leading-7 text-[#8B95AB]">
+                  {exp.points.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span className="mt-[0.7rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#5B7FFF]" />
+                      <span><NoBreakHyphens text={point} /></span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </FadeIn>
           ))}

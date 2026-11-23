@@ -1,22 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useReducedMotion } from "framer-motion";
 
-const ROLES = ["Software Engineer", "Backend Engineer", "Data Engineer", "AI Engineer"];
+const ROLES = ["Software Engineer", "Backend Engineer", "Full-Stack Engineer", "Data Engineer", "AI Engineer"];
 const TYPE_SPEED = 80;
 const DELETE_SPEED = 40;
 const PAUSE_AFTER_TYPE = 1800;
-const PAUSE_AFTER_DELETE = 300;
 
 export default function TypewriterRole() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [text, setText] = useState("");
   const [deleting, setDeleting] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
-
-  useEffect(() => {
-    setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-  }, []);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (reduceMotion) return;

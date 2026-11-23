@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useReducedMotion } from "framer-motion";
 
 type Line =
   | { kind: "prompt" }
@@ -11,8 +12,7 @@ type Line =
 
 const PROMPT = "avantika@portfolio ~/portfolio (main)";
 
-function buildScript(): Line[] {
-  return [
+const SCRIPT: Line[] = [
     { kind: "prompt" },
     { kind: "command", text: "whoami" },
     { kind: "output", text: "Avantika — I build systems that have to be right, not just clever." },
@@ -24,16 +24,15 @@ function buildScript(): Line[] {
     { kind: "gap" },
     { kind: "prompt" },
     { kind: "command", text: "ls ./recent-builds" },
+    { kind: "output", text: "reprozero" },
+    { kind: "output", text: "  Incident tickets to verified fixes in ~15 minutes" },
     { kind: "output", text: "agentcourt-precedent" },
     { kind: "output", text: "  AI courtroom that judges every risky agent action" },
     { kind: "output", text: "truthlens-ai" },
     { kind: "output", text: "  Explainable fact-checking, any domain" },
-    { kind: "output", text: "idempotent-payments" },
-    { kind: "output", text: "  Exactly-once payments, zero duplicate charges" },
     { kind: "status", ms: 420 },
-    { kind: "gap" },
-  ];
-}
+  { kind: "gap" },
+];
 
 const TYPE_SPEED = 28;
 const AFTER_COMMAND_PAUSE = 250;
@@ -42,27 +41,15 @@ const AFTER_STATUS_PAUSE = 300;
 const GAP_PAUSE = 150;
 
 export default function TerminalSession() {
-  const script = buildScript();
+  const script = SCRIPT;
+  const reduceMotion = useReducedMotion();
   const [lineIndex, setLineIndex] = useState(0);
   const [charCount, setCharCount] = useState(0);
-  const [done, setDone] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
+  const shownIndex = reduceMotion ? script.length : lineIndex;
+  const done = shownIndex >= script.length;
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    setReduceMotion(prefersReduced);
-    if (prefersReduced) {
-      setLineIndex(script.length);
-      setDone(true);
-    }
-  }, [script.length]);
-
-  useEffect(() => {
-    if (reduceMotion) return;
-    if (lineIndex >= script.length) {
-      setDone(true);
-      return;
-    }
+    if (reduceMotion || lineIndex >= script.length) return;
     const line = script[lineIndex];
 
     if (line.kind === "prompt" || line.kind === "status") {
@@ -104,11 +91,11 @@ export default function TerminalSession() {
     return () => clearTimeout(t);
   }, [lineIndex, charCount, script, reduceMotion]);
 
-  const current = script[lineIndex];
+  const current = script[shownIndex];
 
   return (
     <div className="font-mono text-sm leading-7">
-      {script.slice(0, lineIndex).map((line, i) => {
+      {script.slice(0, shownIndex).map((line, i) => {
         if (line.kind === "gap") return <div key={i} className="h-3" />;
         if (line.kind === "prompt")
           return (

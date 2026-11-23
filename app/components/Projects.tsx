@@ -1,5 +1,6 @@
 import { projects } from "../data";
 import FadeIn from "./FadeIn";
+import NoBreakHyphens from "./NoBreakHyphens";
 
 export default function Projects() {
   return (
@@ -16,9 +17,9 @@ export default function Projects() {
               <div className="group flex h-full flex-col rounded-[1.5rem] border border-white/10 bg-[#0F1524] p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-white/20">
                 <h3 className="text-2xl font-bold text-[#E7ECFB]">{project.name}</h3>
 
-                <p className="mt-4 leading-7 text-[#8B95AB]">{project.desc}</p>
+                <p className="mt-4 leading-7 text-[#8B95AB]"><NoBreakHyphens text={project.desc} /></p>
 
-                <p className="mt-6 text-sm font-semibold text-[#8FA8FF]">{project.tech}</p>
+                <p className="mt-auto pt-6 text-sm font-semibold text-[#8FA8FF]">{project.tech}</p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
                   {project.live && (

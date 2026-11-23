@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navItems } from "../data";
+import { useReducedMotion } from "framer-motion";
+import { navItems, RESUME_URL } from "../data";
 
 const LOGO_TEXT = "AC";
 const LOGO_TYPE_SPEED = 180;
@@ -11,16 +12,14 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [logoChars, setLogoChars] = useState(0);
+  const reduceMotion = useReducedMotion();
+  const shownLogoChars = reduceMotion ? LOGO_TEXT.length : logoChars;
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setLogoChars(LOGO_TEXT.length);
-      return;
-    }
-    if (logoChars >= LOGO_TEXT.length) return;
+    if (reduceMotion || logoChars >= LOGO_TEXT.length) return;
     const t = setTimeout(() => setLogoChars((c) => c + 1), LOGO_TYPE_SPEED);
     return () => clearTimeout(t);
-  }, [logoChars]);
+  }, [logoChars, reduceMotion]);
 
   useEffect(() => {
     const sections = navItems
@@ -46,13 +45,13 @@ export default function Nav() {
         <a href="#" className="block">
           <div className="text-3xl font-bold text-[#8FA8FF]">
             <span className="text-[#5B6478]">&gt;</span>
-            {LOGO_TEXT.slice(0, logoChars)}
+            {LOGO_TEXT.slice(0, shownLogoChars)}
             <span className="ml-0.5 inline-block h-[0.8em] w-[3px] animate-pulse bg-current align-middle" />
           </div>
           <p className="text-xs text-[#8B95AB]">Software Engineer</p>
         </a>
 
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => {
             const isActive = activeSection === item.toLowerCase();
             return (
@@ -72,10 +71,10 @@ export default function Nav() {
         </div>
 
         <a
-          href="https://drive.google.com/file/d/1jJ20eKaz2W2QHLRxRbDI-KzZOddaHYcv/view?usp=sharing"
+          href={RESUME_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block rounded-2xl border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-[#8FA8FF]"
+          className="hidden lg:inline-block rounded-2xl border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-[#8FA8FF]"
         >
           Resume ↓
         </a>
@@ -85,14 +84,14 @@ export default function Nav() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="md:hidden rounded-xl border border-white/15 bg-white/[0.03] p-2 text-[#8FA8FF]"
+          className="lg:hidden rounded-xl border border-white/15 bg-white/[0.03] p-2 text-[#8FA8FF]"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-[#0A0E17] px-8 py-6">
+        <div className="lg:hidden border-t border-white/10 bg-[#0A0E17] px-8 py-6">
           <div className="flex flex-col gap-5">
             {navItems.map((item) => (
               <a
@@ -105,7 +104,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="https://drive.google.com/file/d/1jJ20eKaz2W2QHLRxRbDI-KzZOddaHYcv/view?usp=sharing"
+              href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

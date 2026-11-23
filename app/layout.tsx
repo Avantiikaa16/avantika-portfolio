@@ -17,11 +17,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://avantika-chapegadikar-portfolio.vercel.app"),
   title: "Avantika Chapegadikar | Software Engineer",
   description:
-    "Software Engineer specializing in backend systems, cloud data platforms, and AI-powered applications. Experience with Python, Java, GCP, AWS, and distributed systems.",
+    "Software Engineer specializing in backend, full-stack, and cloud systems and AI-powered applications. Experience with Python, Java, TypeScript, React, GCP, AWS, and BigQuery.",
   keywords: [
     "Avantika Chapegadikar",
     "Software Engineer",
     "Backend Engineer",
+    "Full-Stack Engineer",
     "Data Engineer",
     "AI/ML Engineer",
     "Portfolio",
